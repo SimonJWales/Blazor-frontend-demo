@@ -1,0 +1,82 @@
+﻿@page "/elastic-all"
+@inherits ElasticAllBase
+@using System.Reflection
+
+<h1>Get all Elastic data</h1>
+
+<p>This returns just the first 1000 entries from Elastic Search.</p>
+<p class="alert-danger">
+    @ConnectionError
+</p>
+
+@if (SearchAll == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>File</th>
+                <th>Device</th>
+                <th>Info</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var search in SearchAll)
+            {
+                <tr>
+                    @if (search != null)
+                    {
+                        <td>@search.DateUploaded</td>
+                        <td>@search.FileName</td>
+                        @if (search.BDS_HEAD != null)
+                        {
+                            <td>@search.BDS_HEAD.DeviceID</td>
+                        }
+                        else
+                        {
+                            <td></td>
+                        }
+                <td>
+                    @if (search.BDS_HEAD != null)
+                    {
+                        @*<h5>BDS_HEAD</h5>*@
+                        PropertyInfo[] propHead = search.BDS_HEAD.GetType().GetProperties();
+                        @foreach (PropertyInfo property in propHead)
+                        {
+                            <span>
+                                @property.Name: @property.GetValue(search.BDS_HEAD, null)@(propHead.Last() != property ? ", " : string.Empty)
+                            </span>
+                        }
+                        <br />
+                    }
+                    @if (search.BDS_TXT != null)
+                    {
+                        @*<h5>BDS_TXT</h5>*@
+                        PropertyInfo[] propTxt = search.BDS_TXT.GetType().GetProperties();
+                        @foreach (PropertyInfo property in propTxt)
+                        {
+                            @if (property.GetValue(search.BDS_TXT) != null)
+                            {
+                <span>
+                    @property.Name: @property.GetValue(search.BDS_TXT, null)&comma;
+                </span>
+                            }
+                        }
+                    }
+                    Sequence: @search.Sequence
+                    <br />
+                    ID: @search.Id
+                    <br />
+
+                </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}

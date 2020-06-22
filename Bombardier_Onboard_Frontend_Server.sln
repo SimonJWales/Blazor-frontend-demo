@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bombardier_Onboard_Frontend_Server", "Bombardier_Onboard_Frontend_Server\Bombardier_Onboard_Frontend_Server.csproj", "{CA5D4E87-7F33-42E1-A2DB-DEED4FAE4A37}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F857DE78-A5CE-4719-9263-BE144BE752ED} = {F857DE78-A5CE-4719-9263-BE144BE752ED}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrainLog", "..\..\Class Libs\TrainLog\TrainLog\TrainLog\TrainLog.csproj", "{F857DE78-A5CE-4719-9263-BE144BE752ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA5D4E87-7F33-42E1-A2DB-DEED4FAE4A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA5D4E87-7F33-42E1-A2DB-DEED4FAE4A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA5D4E87-7F33-42E1-A2DB-DEED4FAE4A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA5D4E87-7F33-42E1-A2DB-DEED4FAE4A37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F857DE78-A5CE-4719-9263-BE144BE752ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F857DE78-A5CE-4719-9263-BE144BE752ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F857DE78-A5CE-4719-9263-BE144BE752ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F857DE78-A5CE-4719-9263-BE144BE752ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {354C4FBD-22D5-48D7-A5E9-8F0611F29650}
+	EndGlobalSection
+EndGlobal

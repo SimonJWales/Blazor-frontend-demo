@@ -1,0 +1,10 @@
+﻿@page "/"
+
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+<h1>Bombardier Onboard Blazor</h1>
+
+The framework for developing the Blazor frontend app for Bombardier Onboard.
+
+<p>Config: @Configuration["AWS:ES_ENDPOINT"]</p>

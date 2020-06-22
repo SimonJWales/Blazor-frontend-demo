@@ -1,0 +1,29 @@
+﻿@inherits SearchDialogBase
+
+@if (ShowDialog == true)
+{
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Search for stuff</h5>
+                    <button type="button" class="close" @onclick="Close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <EditForm Model="@SingleSearchItem">
+                    <div class="modal-body">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+                        <InputText id="name" class="form form-text" @bind-Value="SingleSearchItem.SingleInput" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" @onclick="HandleValidSubmit" class="btn btn-primary">Search</button>
+                        <button type="button" @onclick="Close" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+
+}
